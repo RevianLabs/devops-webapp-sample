@@ -4,7 +4,7 @@ ADD . /app
 WORKDIR /app
 RUN mvn --batch-mode clean install
 
-FROM openjdk:17-jdk
+FROM openjdk:18-jdk
 
 COPY --from=builder /app/target/*.jar /app.jar
 

@@ -7,14 +7,14 @@ pipeline {
          stage('Clone repository') {
             steps {
                 script{
-                checkout scm
+                    checkout scm
                 }
             }
         }
         stage('Build') {
             steps {
                 script{
-                 app = docker.build("underwater")
+                    app = docker.build("devops-webapp-sample")
                 }
             }
         }
