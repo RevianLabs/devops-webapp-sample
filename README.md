@@ -1,3 +1,5 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/RevianLabs/devops-webapp-sample/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/RevianLabs/devops-webapp-sample/tree/master)
+
 # devops-webapp-sample
 Java-based WebApp to use as a sample for DevOps tools
 
