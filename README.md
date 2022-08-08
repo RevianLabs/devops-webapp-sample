@@ -1,4 +1,6 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/RevianLabs/devops-webapp-sample/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/RevianLabs/devops-webapp-sample/tree/master)
+[![Java CI with Maven](https://github.com/RevianLabs/devops-webapp-sample/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/RevianLabs/devops-webapp-sample/actions/workflows/maven.yml)
+[![Docker Image CI](https://github.com/RevianLabs/devops-webapp-sample/actions/workflows/docker-image.yml/badge.svg?branch=master)](https://github.com/RevianLabs/devops-webapp-sample/actions/workflows/docker-image.yml)
 
 # devops-webapp-sample
 Java-based WebApp to use as a sample for DevOps tools
