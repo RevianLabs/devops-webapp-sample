@@ -14,7 +14,7 @@ Java-based WebApp to use as a sample for DevOps tools
 ### Containerization
 
  * [x] [Docker](https://www.docker.com/)
- * [ ] [Docker Compose](https://docs.docker.com/compose/)
+ * [x] [Docker Compose](https://docs.docker.com/compose/)
  * [ ] [Kubernetes](https://kubernetes.io/)
  * [ ] [Helm](https://helm.sh/)
  

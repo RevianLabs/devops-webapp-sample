@@ -1,0 +1,21 @@
+version: "3.1"
+services:
+  webapp:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    environment:
+      - DB_URL=jdbc:mysql://db:3306/webapp_db
+      - DB_USER=webapp_user
+      - DB_PASS=An0thrS3crt
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=S3cret
+      - MYSQL_PASSWORD=An0thrS3crt
+      - MYSQL_USER=webapp_user
+      - MYSQL_DATABASE=webapp_db
