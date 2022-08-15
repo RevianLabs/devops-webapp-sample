@@ -41,9 +41,9 @@ Java-based WebApp to use as a sample for DevOps tools
 
 ### Database support
 
- * [x] [MySQL](https://www.mysql.com/)
- * [ ] [H2](https://www.h2database.com/html/main.html)
- * [ ] [Postgres](https://www.postgresql.org/)
+ * [x] [MySQL](https://www.mysql.com/) (default profile)
+ * [x] [H2](https://www.h2database.com/html/main.html) (-Dspring.profiles.active=h2)
+ * [x] [Postgres](https://www.postgresql.org/) (-Dspring.profiles.active=pg)
 
 ## License
 
