@@ -1,10 +1,10 @@
-FROM maven:3.8.6-openjdk-18 AS builder
+FROM openjdk:18-alpine AS builder
 
 ADD . /app
 WORKDIR /app
-RUN mvn --batch-mode clean install
+RUN ./mvnw --batch-mode clean install
 
-FROM openjdk:18-jdk
+FROM openjdk:18-alpine
 
 COPY --from=builder /app/target/*.jar /app.jar
 
