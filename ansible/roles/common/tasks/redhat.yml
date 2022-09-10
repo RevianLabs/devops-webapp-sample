@@ -1,0 +1,27 @@
+---
+- name: Install epel release
+  yum:
+    name: epel-release
+
+- name: Install system packages and utilities
+  yum:
+    name:
+      [
+        "which",
+        "git",
+        "git-core",
+        "wget",
+        "python3-pip",
+        "zip",
+        "vim",
+        "vim-common",
+        "curl",
+        "chrony",
+        "openssl",
+        "rsyslog",
+        "htop",
+        "figlet",
+      ]
+    state: present
+    update_cache: true
+  changed_when: false

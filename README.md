@@ -32,8 +32,8 @@ Java-based WebApp to use as a sample for DevOps tools
  
 ### Configuration management
 
- * [ ] [Ansible](https://www.ansible.com/)
-     * [ ] Linux
+ * [x] [Ansible](https://www.ansible.com/)
+     * [x] Linux
      * [ ] Windows
  * [ ] [Chef](https://www.chef.io/)
  * [ ] [Puppet](https://puppet.com/)

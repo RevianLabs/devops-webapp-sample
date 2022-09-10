@@ -1,0 +1,22 @@
+---
+- name: install system packages and utils
+  apt:
+    pkg:
+      [
+        "ntp",
+        "openssl",
+        "git",
+        "telnet",
+        "htop",
+        "wget",
+        "python3-pip",
+        "zip",
+        "vim",
+        "curl",
+        "rsyslog",
+        "libjson-xs-perl",
+      ]
+    state: present
+    update_cache: true
+    cache_valid_time: 5400
+  changed_when: false

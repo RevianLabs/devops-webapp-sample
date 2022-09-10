@@ -1,0 +1,3 @@
+---
+java_apt_package: openjdk-11-jdk
+java_yum_package: java-11-openjdk
