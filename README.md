@@ -13,7 +13,7 @@ Java-based WebApp to use as a sample for DevOps tools
  * [x] [Jenkins](https://www.jenkins.io/)
  * [x] [Github Actions] (https://github.com/features/actions)
  * [x] [CircleCI] (https://circleci.com/)
- * [ ] [Gitlab CI/CD] (https://docs.gitlab.com/ee/ci/)
+ * [x] [Gitlab CI/CD] (https://docs.gitlab.com/ee/ci/)
  
 ### Containerization
 
