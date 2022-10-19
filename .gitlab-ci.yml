@@ -14,7 +14,7 @@ variables:
     -DinstallAtEnd=true
     -DdeployAtEnd=true
 
-image: maven:3-eclipse-temurin-11
+image: maven:3-eclipse-temurin-17
 
 cache:
   paths:
