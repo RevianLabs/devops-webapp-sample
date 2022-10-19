@@ -1,0 +1,6 @@
+---
+- name: Install Java package (Ubuntu/Debian)
+  apt:
+    name: "{{ java_apt_package }}"
+    state: present
+    update_cache: yes

@@ -1,0 +1,14 @@
+---
+- name: Linux java installation + deployment
+  hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    springboot_application_name: devops-webapp-sample
+    springboot_src_file: artifacts/devops-webapp-sample.jar
+    springboot_user: root
+    springboot_group: root
+  roles:
+    - common
+    - java
+    - deploy

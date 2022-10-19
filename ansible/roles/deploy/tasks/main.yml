@@ -1,0 +1,62 @@
+---
+- name: "Check for required inventory springboot_application_name variable"
+  fail:
+    msg: springboot_application_name variable is required and should be defined in you inventory
+  when: not springboot_application_name
+
+- name: "Check for required inventory springboot_src_file or springboot_src_url variable"
+  fail:
+    msg: springboot_src variable or springboot_src_url is required and should be defined in you inventory
+  when: (not springboot_src_file) and (not springboot_src_url)
+
+- name: "Create deploy folder if not exists"
+  file:
+    path: "{{ springboot_deploy_folder }}"
+    state: directory
+    owner: "{{ springboot_user }}"
+    group: "{{ springboot_group }}"
+
+- name: "Copy jar application"
+  copy:
+    src: "{{ springboot_src_file }}"
+    dest: "{{ springboot_deploy_folder }}/{{ springboot_application_name }}.jar"
+    owner: "{{ springboot_user }}"
+    group: "{{ springboot_group }}"
+    mode: "u+x"
+  when: springboot_src_file is defined and springboot_src_file|length > 0
+  notify:
+    - "Restart application"
+
+- name: "Download springboot application"
+  get_url:
+    url: "{{ springboot_src_url }}"
+    dest: "{{ springboot_deploy_folder }}/{{ springboot_application_name }}.jar"
+    owner: "{{ springboot_user }}"
+    group: "{{ springboot_group }}"
+    mode: "u+x"
+  when: springboot_src_url is defined and springboot_src_url|length > 0
+  notify:
+    - "Restart application"
+
+- name: "Deploy app properties"
+  template:
+    src: "{{ springboot_propertyfile_template }}"
+    dest: "{{ springboot_deploy_folder }}"
+    owner: "{{ springboot_user }}"
+    group: "{{ springboot_group }}"
+  when: springboot_propertyfile_template
+  notify:
+    - "Restart application"
+
+- name: "Deploy app config"
+  template:
+    src: "{{ springboot_configuration_template }}"
+    dest: "{{ springboot_deploy_folder }}"
+    owner: "{{ springboot_user }}"
+    group: "{{ springboot_group }}"
+  when: springboot_configuration_template
+  notify:
+    - "Restart application"
+
+- name: Install as service
+  include_tasks: service.yml

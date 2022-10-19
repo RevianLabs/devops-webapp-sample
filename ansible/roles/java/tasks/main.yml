@@ -1,0 +1,8 @@
+---
+- name: Install for CentOS/RedHat
+  include_tasks: redhat.yml
+  when: (ansible_os_family == "CentOS") or (ansible_os_family == "RedHat")
+
+- name: Install for Debian/Ubuntu
+  include_tasks: debian.yml
+  when: (ansible_os_family == "Debian") or (ansible_os_family == "Ubuntu")
