@@ -20,7 +20,7 @@ Java-based WebApp to use as a sample for DevOps tools
  * [x] [Docker](https://www.docker.com/)
  * [x] [Docker Compose](https://docs.docker.com/compose/)
  * [x] [Kubernetes](https://kubernetes.io/)
- * [ ] [Helm](https://helm.sh/)
+ * [x] [Helm](https://helm.sh/)
  
 ### IaC
 
