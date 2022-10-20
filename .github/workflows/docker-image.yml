@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag devops-webapp-sample
+      run: docker build . --file Dockerfile --tag revianlabs/devops-webapp-sample
       
     - name: Docker login
       if: ${{ github.ref == 'refs/heads/master' }}
