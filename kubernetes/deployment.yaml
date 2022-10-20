@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-webapp-sample
+spec:
+  selector:
+    matchLabels:
+      run: devops-webapp-sample
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: devops-webapp-sample
+    spec:
+      containers:
+        - name: devops-webapp-sample
+          image: revianlabs/devops-webapp-sample:latest
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "h2"
+          ports:
+            - containerPort: 8080
