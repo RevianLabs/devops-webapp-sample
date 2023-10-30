@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+
+network:
+  - ["forwarded_port", {guest: 8080, host: 8080}]
+
+provisioner:
+  name: chef_zero
+  product_name: chef
+  product_version: 17
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-22.04
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
