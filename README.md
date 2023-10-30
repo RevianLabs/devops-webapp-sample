@@ -35,7 +35,7 @@ Java-based WebApp to use as a sample for DevOps tools
  * [x] [Ansible](https://www.ansible.com/)
      * [x] Linux
      * [ ] Windows
- * [ ] [Chef](https://www.chef.io/)
+ * [x] [Chef](https://www.chef.io/)
  * [ ] [Puppet](https://puppet.com/)
  * [ ] [Salt](https://saltproject.io/)
 
