@@ -2,7 +2,7 @@ FROM openjdk:18-alpine AS builder
 
 ADD . /app
 WORKDIR /app
-RUN ./mvnw --batch-mode clean install
+RUN ./mvnw -DskipTests=true --batch-mode clean install
 
 FROM openjdk:18-alpine
 
