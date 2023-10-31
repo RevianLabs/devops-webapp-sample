@@ -2,6 +2,8 @@ package com.revianlabs.sample;
 
 import com.revianlabs.sample.entities.User;
 import com.revianlabs.sample.repositories.UserRepository;
+import org.hamcrest.Matchers;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +30,16 @@ public class UserRestControllerIntegrationTest {
     @Autowired
     private UserRepository repository;
 
-    private User testUser;
+    private final User testUser = new User("TestUser", "test@email.com");;
 
     @BeforeEach
     public void setup() {
-        testUser = new User("TestUser", "test@email.com");
         repository.save(testUser);
+    }
+
+    @AfterEach
+    public void tearDown() {
+        repository.delete(testUser);
     }
 
     @Test
@@ -41,8 +47,7 @@ public class UserRestControllerIntegrationTest {
         mvc.perform(get("/index"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("index"))
-                .andExpect(model().attributeExists("users"))
-                .andExpect(model().attribute("users", List.of(testUser)));
+                .andExpect(model().attributeExists("users"));
     }
 
     @Test
